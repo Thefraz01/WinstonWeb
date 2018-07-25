@@ -1,0 +1,145 @@
+form {
+
+    margin-left: 40%;
+    margin-right:40%;
+    width: 50%;
+}
+
+head {
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 50%;
+}
+h2 {
+    font-size:30px;
+}
+h1 {
+    text-align: center;
+    font-size: 30px;
+    line-height: 10px;
+}
+h3 {
+    text-align: center;
+    font-size: 40px;
+    line-height: 10px; 
+}
+#CookProcessDiv {
+    display: none;
+}
+#cookSettingsDiv {
+    display: none;
+}
+#DProbeTimer {
+    display: none;
+}
+#probeDiv {
+    display:none;
+}
+#cookTime1 {
+    display: none;
+}
+#cookTime2 {
+    display: none;
+}
+#cookTime3 {
+    display: none;
+}
+#cookTime4 {
+    display: none;
+}
+#cookTimeButtonDiv {
+    display: none;
+}
+#vapTempCookDiv {
+    display: none;
+}
+#vapCookSetDiv {
+    display: none;
+}
+#vapCookButtonDiv {
+    display: none
+}
+#airTempCookDiv {
+    display: none;
+}
+#airCookSetDiv {
+    display: none;
+}
+#airCookButtonDiv {
+    display:none;
+}
+#highYieldCookDiv {
+    display: none;
+}
+
+#convectionCookDiv {
+    display: none;
+}
+#cookFanDiv {
+    display: none;
+}
+#finishCookSettingsDiv {
+    display: none;
+}
+#holdSettingDiv {
+    display: none;
+}
+#holdTimeDiv {
+    display: none;
+}
+#holdTimeSetDiv {
+    display: none;
+}
+#holdHoursDiv {
+    display: none;
+}
+#holdMinutesDiv {
+    display: none;
+}
+#holdTimeButtonDiv {
+    display: none;
+}
+
+#vapHoldDiv {
+    display: none;
+}
+
+#vapHoldSetDiv {
+    display: none;
+}
+#vapHoldButtonDiv {
+    display: none;
+}
+
+#airTempHoldDiv {
+    display: none;
+}
+
+#airHoldSetDiv {
+    display: none;
+} 
+#airHoldButtonDiv {
+    display: none;
+}
+
+#convectionHoldDiv {
+    display: none;
+}
+
+#holdFanDiv {
+    display: none;
+}
+#finishHoldSettingsDiv {
+    display: none;
+}
+#addChannelDiv {
+    display: none;
+}
+#saveFormButton {
+    display: none;
+}
+/* #saveFormButton {
+    display: none;
+}
+
+

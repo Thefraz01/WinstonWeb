@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="kitchensync.css">
+    <script src="KSCook&Hold.js"></script>
+     
+       
+    <title>KitchenSync</title>
+    
+    <h1>KitchenSync</h1>
+    <h3>Cook & Hold</h3>
+</head>
+   
+<body>
+
+    <div text-align="center">
+    <form display="in-line block" text-align="center">
+    <div id="genSettingsLabelDiv">
+            <h2>General Settings</h2>
+    </div>
+    <div id="fileNameDiv">
+        <label for="filename">
+            <i>Filename</i><br>
+            <input id="filename" value="" size="40" placeholder="Enter recipe name"><br><br>
+        </label>
+    </div>
+    <div id="EquipDiv">
+        <label for="Equipment">Equipment</label><br>
+        <input type="radio" Name= "Equipment" Id= "Hold Equip">Hold 
+        <input type="radio" Name= "Equipment" Id= "Cook and Hold Equip">Cook and Hold
+        <input type="radio" Name= "Equipment" Id= "Retherm Equip">Retherm<br><br><br><br>
+    </div>
+
+    <div id="tempScaleDiv">
+        <label for="Temp Scale">Temperature Scale: Will you be entering your data in Fahrenheit or Celsius?</label><br>
+        <input type="radio" Name= "Temp Scale" Id= "Celsius" value="1" onclick="tempScaleChange()">Celsius
+        <input type="radio" Name= "Temp Scale" Id= "Fahrenheit" value="0" onclick="tempScaleChange()" checked>Fahrenheit<br><br>
+        <input type="hidden" value= "0" Id="Temp Scale Value">
+    </div>
+
+    <div id="GeneralSettingsDiv">
+            <label for="Set general Settings"></label><br>
+            <button input type="button" Name= "General Settings" Id= "Apply General Settings" onclick="setGenSettings()">Apply General Settings</button><br>
+    </div>
+    
+    
+
+    <div id = "cookSettingsDiv">
+        <h2>Cook Settings</h2>
+    </div>
+
+    <div id="CookProcessDiv">
+        <label for="Cook Process">Cook Process</label><br>
+        <input type="radio" Name= "Cook Process" Id= "Hold Only" value="Hold Only" onclick="showHoldOnly()">Hold Only
+        <input type="radio" Name= "Cook Process" Id= "Cook and Hold" value="Cook and Hold" onclick="showCookAndHold()">Cook and Hold<br><br>
+        <input type="hidden" Id= "Cook Process Value" value= "1">
+    </div>
+
+    <div id="DProbeTimer">
+        <label for="Cook Type">Cook Type</label><br>
+        <input type="radio" Name= "Cook Type" Id= "Probe" value="Probe" onclick="showProbe()">Probe
+        <input type="radio" Name= "Cook Type" Id= "Cook Timer" value="Timer" onclick="showTimer()" checked>Timer<br><br>
+        <input type="hidden" Name="CookType" Id="Cook Type Value" value="0">
+    </div> 
+    
+    
+    <div id="probeDiv">
+    
+        <i>Probe Temperature:</i><br>
+        <input type="text" Id= "Probe Temp"><br><br>
+        <Button input type="button" Id= "Probe Temp Button" onclick= "setProbeTemp()">Set Probe Temp</Button><br><br>
+        <input type="hidden" Id= "Probe Temp Value" value="0">
+    
+    </div>
+
+     
+    
+    <div id="cookTime1">
+        <label for="Cook Time">Cook Time</label><br>
+        <input type="radio" Name= "Cook Time" Id= "Cook Time Infinite" value="Infinite" onclick="infiniteCook()">Infinite
+        <input type="radio" Name= "Cook Time" Id= "Cook Timer Set" value="Set" onclick="showTimer()" checked>Set<br>
+    </div>
+    <div id="cookTime2">
+        <i>Cook Time</i>
+    </div>
+    <div id="cookTime3">
+        <label for="Cook Hours">Hours &ensp;</label>
+        <input type="text" Id="Cook Hours"><br>
+    </div>
+    <div id="cookTime4">
+        <label for="Cook Minutes">Minutes</label>
+        <input type="text" Id="Cook Minutes"><br><br>
+    </div>
+    <div id = "cookTimeButtonDiv">
+        <Button input type="button" Id= "Set Cook Time Button" onclick= "setCookTime()">Set Cook Time</Button><br><br>
+        <input type="hidden" Id= "Cook Time Value" value="0">
+    </div>
+    <div id="vapTempCookDiv">
+        <label for="Vapor Temperature Cook">Vapor Temperature</label><br>
+        <input type="radio" Name= "Vapor Temperature Cook" Id= "Vapor Temperature Cook Off" onclick="hideVapCookSet()" value="Off" checked>Off
+        <input type="radio" Name= "Vapor Temperature Cook" Id= "Vapor Temperature Cook Set" onclick="showVapCookSet()" value="Set">Set<br>
+    </div>
+
+    <div id = "vapCookSetDiv">
+        <label for="Vapor Cook Set">Vapor Cook Temperature:</label><br>
+        <input type="text" Id= "Vapor Cook Set"><br><br>
+    </div>
+    <div id = "vapCookButtonDiv">
+        <Button input type="button" Id= "Vap Cook Set Button" onclick= "setVapCookTemp()">Set Vapor Temp</Button><br><br>
+        <input type="hidden" Id= "Vap Cook Value" value="0">
+    </div>
+
+    <div id = "airTempCookDiv">
+        <label for="Air Temperature Cook">Air Temperature</label><br>
+        <input type="radio" Name= "Air Temperature Cook" Id= "Air Temperature Cook Off" onclick="hideAirCookSet()" value="Off" checked>Off
+        <input type="radio" Name= "Air Temperature Cook" Id= "Air Temperature Cook Set" onclick="showAirCookSet()" value="Set">Set
+        <input type="radio" Name= "Air Temperature Cook" Id= "Sous Vide Cook" onclick="sousVideCook()" value= "souse vide">Sous Vide<br><br>
+        
+    </div>
+    
+    <div id = "airCookSetDiv">
+        <label for="Air Cook Set">Air Cook Temperature:</label><br>
+        <input type="text" Id= "Air Cook Set"><br><br>
+    </div>
+    <div id = "airCookButtonDiv">
+        <Button input type="button" Id= "Air Cook Set Button" onclick= "setAirCookTemp()">Set Air Temp</Button><br><br>
+        <input type="hidden" Id= "Air Cook Value" value="0">
+    </div>
+
+    <div id = "highYieldCookDiv">
+        <label for="High Yield Cook">High Yield</label><br>
+        <input type="radio" Name= "High Yield Cook" Id= "High Yield Cook" onclick= "highYieldAlert()">On
+        <input type="radio" Name= "High Yield Cook" Id= "High Yield Cook Off" onclick= "highYieldChange()" value="Off" checked>Off<br>
+        <input type="hidden" value="0" id="High Yield Value"/>
+    </div>
+    <div id = "convectionCookDiv">
+        <label for="Convection Cook">Convection</label><br>
+        <input type="radio" name= "Convection Cook" Id= "Convection Cook" onclick= "cookFanChange()" value="On">On
+        <input type="radio" name= "Convection Cook" Id= "Convection Cook Off" onclick= "cookFanChange()" value="Off" checked>Off<br>
+        <input type="hidden" value="0" id="Cook Fan Value"/>
+    </div>
+    <div id = "finishCookSettingsDiv">
+        <Button input type="button" Id= "Finish Cook Settings Button" onclick= "finishCook()">Finalize Cook Settings</Button><br><br>
+    </div>
+    
+    <div id = "cookFanDiv">
+        
+    </div>
+
+    <div id = "holdSettingDiv" display = "none">
+        <h2>Hold Settings</h2>
+    </div>
+    <div id = "holdTimeDiv">
+        <label for="Hold Time">Hold Time</label><br>
+        <input type="radio" Name= "Hold Time" Id= "Hold Time" value="Infinite" onclick="hideHoldTime()">Infinite
+        <input type="radio" Name= "Hold Time" Id= "Hold Timer Set" value="Set" onclick ="showHoldTime()"checked>Set<br>
+    </div>
+    <div id="holdTimeSetDiv">
+        <i>Hold Time</i>
+    </div>
+    <div id="holdHoursDiv">
+        <label for="Hold Hours">Hours &ensp;  </label>
+        <input type="text" Id="Hold Hours"><br>
+    </div>
+    <div id="holdMinutesDiv">
+        <label for="Hold Minutes">Minutes</label>
+        <input type="text" Id="Hold Minutes"><br><br>
+        <input type="hidden" Id="Hold Time Value" value="0">
+    </div>
+    <div id = "holdTimeButtonDiv">
+            <Button input type="button" Id= "Set Hold Time Button" onclick= "setHoldTime()">Set Hold Time</Button><br><br>
+            <input type="hidden" Id= "Hold Time Value" value="0">
+    </div>
+
+    <div id = "vapHoldDiv">
+        <label for="Vapor Temperature Hold">Vapor Temperature</label><br>
+        <input type="radio" Name= "Vapor Temperature Hold" Id= "Vapor Temperature Hold Off" onclick= "hideVapHoldSet()" value="Off" checked>Off
+        <input type="radio" Name= "Vapor Temperature Hold" Id= "Vapor Temperature Hold Set" onclick= "showVapHoldSet()" value="Set">Set<br>
+    </div>
+    <div id = "vapHoldSetDiv">
+        <label for="Vapor Hold Set">Vapor Hold Temperature:</label><br>
+        <input type="number" Id= "Vapor Hold Set"><br><br>
+    </div>
+
+    <div id = "vapHoldButtonDiv">
+        <Button input type="button" Id="Vap Hold Button" onclick="enterVapHold()">Set Vapor Temperature</Button>
+        <input type="hidden" Id="Vap Hold Value" value="0">
+        </Button>
+    </div>
+
+    <div id = "airTempHoldDiv">
+        <label for="Air Temperature Hold">Air Temperature</label><br>
+        <input type="radio" Name= "Air Temperature Hold" Id= "Air Temperature Hold Off" onclick= "hideAirHoldSet()" value="Off" checked>Off
+        <input type="radio" Name= "Air Temperature Hold" Id= "Air Temperature Hold Set" onclick= "showAirHoldSet()" value="Set">Set
+        <input type="radio" Name="Air Temperature Hold" Id= "Air Temperature Hold Sous Vide" onclick= "sousVideWarning2()" value="Sous Vide Hold">Sous Vide
+    </div>
+
+    <div id = "airHoldSetDiv">
+        <label for="Air Hold Set">Air Hold Temperature:</label><br>
+        <input type="text" Id= "Air Hold Set"><br><br>
+    </div>
+    <div id = "airHoldButtonDiv">
+        <Button input type="button" Id = "Air Hold Button" onclick= "enterAirHold()">Set Air Temperature</Button>
+        <input type="hidden" Id="Air Hold Value" value="0">
+    </div>
+    <div id = "convectionHoldDiv">
+        <label for="Convection Hold">Convection</label><br>
+        <input type="radio" Name= "Convection Hold" Id= "Convection Hold" onclick= "holdFanChange()" value="On">On
+        <input type="radio" Name= "Convection Hold" Id= "Convection Hold" onclick= "holdFanChange()" value="Off" checked>Off<br>
+        <input type="hidden" value="0" id="Hold Fan Value"/>
+    </div>
+    <div id = "finishHoldSettingsDiv">
+        <Button input type="button" Id="Finish Hold Settings" onclick="finishHold()">Finalize Hold Settings</Button>
+    </div>
+    
+    <div id="addChannelDiv">
+        <button input type="button" id="addChannel" onclick="addChannel()">Add Channel</button>
+    </div>
+    
+
+    
+    <div id="saveFormButton">
+        <button onclick="saveFormAsTextFile()">
+            Save to File
+        </button>
+    </div>
+    <br><br><br>
+</form>
+</div>
+</body>
+</html>
