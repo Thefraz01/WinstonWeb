@@ -51,10 +51,9 @@ function setGenSettings() {
 
 //* set probe temp value and check parameters
 
+
 function setProbeTemp() {
     if ((document.getElementById("Probe").checked) && (document.getElementById("Celsius").checked)) {
-        
-        
         x = document.getElementById("Probe Temp").value;
         try { 
             if((x == "") || (x >93) || (x < 32) || (isNaN(x))) {
@@ -152,8 +151,7 @@ function setCookTime() {
 
 function setVapCookTemp() {
     if ((document.getElementById("Vapor Temperature Cook Set").checked) && (document.getElementById("Celsius").checked)) {  
-        
-        x = document.getElementById("Vapor Cook Set").value;
+        var x = document.getElementById("Vapor Cook Set").value;
         try { 
             if((x == "") || (isNaN(x)) || (x > 93) || (x < 32)) {
                    alert ("Cooking Vapor Temperature must be between 32 and 93 degrees C");
@@ -361,15 +359,14 @@ function setHoldTime() {
             message.innerHTML = "" + err;
         }
     } 
-    if (document.getElementById("Cook Time Infinite").checked) {
-        document.getElementById("holdTime1").style.display = "none";
-                document.getElementById("holdTime2").style.display = "none";
-                document.getElementById("holdTime3").style.display = "none";
-                document.getElementById("holdTime4").style.display = "none";
+    if (document.getElementById("Hold Time Infinite").checked) {
+        document.getElementById("holdTimeDiv").style.display = "none";
+                document.getElementById("holdTimeSetDiv").style.display = "none";
+                document.getElementById("holdHoursDiv").style.display = "none";
+                document.getElementById("holdMinutesDiv").style.display = "none";
                 document.getElementById("holdTimeButtonDiv").style.display = "none";
-                document.getElementById("vapTempHoldDiv").style.display = "block";
-                document.getElementById("vapHoldButtonDiv").style.display = "block";
-            
+                document.getElementById("vapHoldDiv").style.display = "block";
+                document.getElementById("vapHoldButtonDiv").style.display = "block"
     }
     
 }
@@ -417,7 +414,6 @@ function enterVapHold() {
     }
 
     if (document.getElementById("Vapor Temperature Hold Off").checked) {
-        document.getElementById("Vap Hold Value").value = x;
         document.getElementById("vapHoldDiv").style.display = "none";
         document.getElementById("vapHoldSetDiv").style.display = "none";
         document.getElementById("vapHoldButtonDiv").style.display = "none";
@@ -812,8 +808,34 @@ function holdFanChange() {
 }
 
 
+/*function saveChannel() {
+    
+    var textToSave =
+    '<PresetCookHold>' +
+    '<Channel>' +
+        '<ProbeSetPoint>'+ document.getElementById('Probe Temp Value').value + '</ProbeSetPoint>' +
+        '<CookTime>' + document.getElementById("Cook Time Value").value + '</CookTime>' +
+        '<CookTempEvap>' + document.getElementById('Vap Cook Value').value + '</CookTempEvap>' +
+        '<CookTempAir>' + document.getElementById('Air Cook Value').value + '</CookTempAir>' +
+        '<HighYield>' + document.getElementById('High Yield Value').value + '</HighYield>' +
+        '<Convection Cook>' + document.getElementById('Cook Fan Value').value + '</Convection Cook>' +
+        '<HoldTime>' + document.getElementById("Hold Time Value").value + '</HoldTime>' +
+        '<HoldTempEvap>' + document.getElementById("Vap Hold Value").value + '</HoldTempEvap>' +
+        '<HoldTempAir>' + document.getElementById('Air Hold Value').value + '</HoldTempAir>' +
+        '<HoldFan>' + document.getElementById('Hold Fan Value').value + '</HoldFan>' +
+    '</Channel>' +
+    '</PresetCookHold>' +
+    '<GeneralSettings>' +
+    '<TempScale>' + document.getElementById('Temp Scale Value').value + '</TempScale>' +
+    '<GeneralSettings>';
+    
 
-
+    
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAs = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = document.getElementById("filename").value + '.xml';
+}
+*/
 
 
 
@@ -839,9 +861,10 @@ function saveFormAsTextFile()
              '<HoldFan>' + document.getElementById('Hold Fan Value').value + '</HoldFan>' +
              '</Channel>' +
             '</PresetCookHold>' +
-            '<GeneralSettings>'
-            '<TempScale>' + document.getElementById('Temp Scale Value').value + '</TempScale>'
+            '<GeneralSettings>' +
+            '<TempScale>' + document.getElementById('Temp Scale Value').value + '</TempScale>' +
             '<GeneralSettings>';
+            
    
            
            var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});

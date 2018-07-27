@@ -79,7 +79,7 @@
     <div id="cookTime1">
         <label for="Cook Time">Cook Time</label><br>
         <input type="radio" Name= "Cook Time" Id= "Cook Time Infinite" value="Infinite" onclick="infiniteCook()">Infinite
-        <input type="radio" Name= "Cook Time" Id= "Cook Timer Set" value="Set" onclick="showTimer()" checked>Set<br>
+        <input type="radio" Name= "Cook Time" Id= "Cook Timer Set" value="Set" onclick="showTimer()" checked>Set<br><br><br>
     </div>
     <div id="cookTime2">
         <i>Cook Time</i>
@@ -99,7 +99,7 @@
     <div id="vapTempCookDiv">
         <label for="Vapor Temperature Cook">Vapor Temperature</label><br>
         <input type="radio" Name= "Vapor Temperature Cook" Id= "Vapor Temperature Cook Off" onclick="hideVapCookSet()" value="Off" checked>Off
-        <input type="radio" Name= "Vapor Temperature Cook" Id= "Vapor Temperature Cook Set" onclick="showVapCookSet()" value="Set">Set<br>
+        <input type="radio" Name= "Vapor Temperature Cook" Id= "Vapor Temperature Cook Set" onclick="showVapCookSet()" value="Set">Set<br><br><br>
     </div>
 
     <div id = "vapCookSetDiv">
@@ -138,7 +138,7 @@
         <label for="Convection Cook">Convection</label><br>
         <input type="radio" name= "Convection Cook" Id= "Convection Cook" onclick= "cookFanChange()" value="On">On
         <input type="radio" name= "Convection Cook" Id= "Convection Cook Off" onclick= "cookFanChange()" value="Off" checked>Off<br>
-        <input type="hidden" value="0" id="Cook Fan Value"/>
+        <input type="hidden" value="0" id="Cook Fan Value"/><br><br>
     </div>
     <div id = "finishCookSettingsDiv">
         <Button input type="button" Id= "Finish Cook Settings Button" onclick= "finishCook()">Finalize Cook Settings</Button><br><br>
@@ -153,8 +153,8 @@
     </div>
     <div id = "holdTimeDiv">
         <label for="Hold Time">Hold Time</label><br>
-        <input type="radio" Name= "Hold Time" Id= "Hold Time" value="Infinite" onclick="hideHoldTime()">Infinite
-        <input type="radio" Name= "Hold Time" Id= "Hold Timer Set" value="Set" onclick ="showHoldTime()"checked>Set<br>
+        <input type="radio" Name= "Hold Time" Id= "Hold Time Infinite" value="Infinite" onclick="hideHoldTime()">Infinite
+        <input type="radio" Name= "Hold Time" Id= "Hold Timer Set" value="Set" onclick ="showHoldTime()"checked>Set<br><br>
     </div>
     <div id="holdTimeSetDiv">
         <i>Hold Time</i>
@@ -176,7 +176,7 @@
     <div id = "vapHoldDiv">
         <label for="Vapor Temperature Hold">Vapor Temperature</label><br>
         <input type="radio" Name= "Vapor Temperature Hold" Id= "Vapor Temperature Hold Off" onclick= "hideVapHoldSet()" value="Off" checked>Off
-        <input type="radio" Name= "Vapor Temperature Hold" Id= "Vapor Temperature Hold Set" onclick= "showVapHoldSet()" value="Set">Set<br>
+        <input type="radio" Name= "Vapor Temperature Hold" Id= "Vapor Temperature Hold Set" onclick= "showVapHoldSet()" value="Set">Set<br><br>
     </div>
     <div id = "vapHoldSetDiv">
         <label for="Vapor Hold Set">Vapor Hold Temperature:</label><br>
@@ -193,7 +193,7 @@
         <label for="Air Temperature Hold">Air Temperature</label><br>
         <input type="radio" Name= "Air Temperature Hold" Id= "Air Temperature Hold Off" onclick= "hideAirHoldSet()" value="Off" checked>Off
         <input type="radio" Name= "Air Temperature Hold" Id= "Air Temperature Hold Set" onclick= "showAirHoldSet()" value="Set">Set
-        <input type="radio" Name="Air Temperature Hold" Id= "Air Temperature Hold Sous Vide" onclick= "sousVideWarning2()" value="Sous Vide Hold">Sous Vide
+        <input type="radio" Name="Air Temperature Hold" Id= "Air Temperature Hold Sous Vide" onclick= "sousVideWarning2()" value="Sous Vide Hold">Sous Vide<br><br>
     </div>
 
     <div id = "airHoldSetDiv">
@@ -208,7 +208,7 @@
         <label for="Convection Hold">Convection</label><br>
         <input type="radio" Name= "Convection Hold" Id= "Convection Hold" onclick= "holdFanChange()" value="On">On
         <input type="radio" Name= "Convection Hold" Id= "Convection Hold" onclick= "holdFanChange()" value="Off" checked>Off<br>
-        <input type="hidden" value="0" id="Hold Fan Value"/>
+        <input type="hidden" value="0" id="Hold Fan Value"/><br><br>
     </div>
     <div id = "finishHoldSettingsDiv">
         <Button input type="button" Id="Finish Hold Settings" onclick="finishHold()">Finalize Hold Settings</Button>
