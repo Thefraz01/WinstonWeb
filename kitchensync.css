@@ -22,6 +22,60 @@ h3 {
     text-align: center;
     font-size: 40px;
     line-height: 10px; 
+
+}
+#HoldLabelDiv {
+    display:none;
+}
+
+#CookandHoldLabelDiv {
+    display:none;
+}
+
+#RethermLabelDiv {
+    display:none;
+}
+
+#SecurityDiv {
+    display:none;
+}
+
+#VolumeDiv {
+    display:none;
+}
+#DefaultDisplayDiv {
+    display:none;
+}
+#FillSensorDiv {
+    display:none;
+}
+#FillValveDiv {
+    display:none;
+}
+#EvapTuningDiv {
+    display:none;
+}
+#NextGen02Div {
+    display:none;
+}
+
+#SetChannelDiv {
+    display:none;
+}
+#ChannelDiv {
+    display:none;
+}
+#NextGen03Div {
+    display:none;
+}
+#SecurityBypassDiv {
+    display:none;
+}
+#SecurityBypassDiv {
+    display:none;
+}
+#GeneralSettingsDiv {
+    display:none;
 }
 #CookProcessDiv {
     display: none;
@@ -141,5 +195,11 @@ h3 {
 /* #saveFormButton {
     display: none;
 }
+*/
+#Channel02Div {
+    display:none
+}
+
+
 
 
